@@ -1,3 +1,5 @@
+# Nominatim auf Amazon (AWS) EC2 installieren
+
 ## AWS - EC2 Instanz erstellen
 
 Diese Instanz dient auschließlich zur Einrichtung des Nominatim-Servers als Default-Image, welches später immer wieder im Schnellverfahren aufgesetzt werden kann.
