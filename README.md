@@ -11,7 +11,19 @@ Diese Instanz dient auschließlich zur Einrichtung des Nominatim-Servers als Def
   * hier die Regel HTTP hinzufügen
 4. wieder alles bestätigen und zum Abschluss noch die Schlüsseldatei für den SSH-Zugriff erzeugen
 
-## Default-Image auf t2.medium einrichten
+## Nominatim Quick-Install
+
+* via SSH einloggen (Schlüsseldatei nicht vergessen)
+* Setup-Script herunterladen und (WICHTIG: nur auf einer neuen Instanz s.o.) ausführen
+```shell
+wget -N https://raw.githubusercontent.com/MS-WebDev/nominatim-aws-ec2/master/setup-default-image.sh -P /home/admin
+chmod +x /home/admin/setup-default-image.sh
+./setup-default-image.sh
+```
+
+## Nominatim Step-by-Step installieren
+
+### Default-Image auf t2.medium einrichten
 
   * via SSH einloggen (Schlüsseldatei nicht vergessen)
   * Debian auf den neusten Stand bringen
@@ -72,7 +84,7 @@ nano ./settings/local.php
 @define('CONST_Replication_Recheck_Interval', '900');
 ```
 
-  * Testlauf (ohne Update-Funktion)
+### Testlauf (ohne Update-Funktion)
 ```shell
 # Extrakt herunterladen
 wget -N http://download.geofabrik.de/europe/germany/saarland-latest.osm.pbf -P /home/admin/Nominatim-2.5.1/data
@@ -83,7 +95,7 @@ wget -N http://download.geofabrik.de/europe/germany/saarland-latest.osm.pbf -P /
   
   * Nachdem das Test-Extract ohne Fehler importiert wurde, kann die Suche über http://public-ip/nominatim getestet werden
   
-  * Nominatim vor der Image-Erstellung säubern
+### Nominatim vor der Image-Erstellung säubern
 ```shell
 # Test-Datenbank entfernen
 sudo -u postgres psql -c "DROP DATABASE nom_sl;"
@@ -91,8 +103,9 @@ sudo -u postgres psql -c "DROP DATABASE nom_sl;"
 # Abhängige Dateien entfernen
 rm /home/admin/Nominatim-2.5.1/settings/state.txt /home/admin/Nominatim-2.5.1/settings/configuration.txt /home/admin/Nominatim-2.5.1/settings/download.lock
 ``` 
+### Default-Image über die AWS Konsole erstellen
 
-  * In der AWS Konsole diese Instanz auswählen und unter Actions aus dieser ein Image erstellen (Image name: nom-2.5.1-default)
+In der AWS Konsole diese Instanz auswählen und unter Actions aus dieser ein Image erstellen (Image name: nom-2.5.1-default)
   
 ## Hilfreiche Befehle
   * Datenbank entfernen
