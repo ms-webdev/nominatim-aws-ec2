@@ -37,7 +37,7 @@ mkdir -m 755 /var/www/html/nominatim
 # lade default local.php
 wget -N https://raw.githubusercontent.com/MS-WebDev/nominatim-aws-ec2/master/local.php -P /home/admin/Nominatim-2.5.1/settings
 
-echo 'Your-Public-IP muss ersetzt werden => nano ./settings/local.php'
+echo 'Your-Public-IP muss ersetzt werden => nano /home/admin/Nominatim-2.5.1/settings/local.php'
 
 
 
