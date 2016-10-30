@@ -16,8 +16,9 @@ Diese Instanz dient auschließlich zur Einrichtung des Nominatim-Servers als Def
 * via SSH einloggen (Schlüsseldatei nicht vergessen)
 * Setup-Script herunterladen und (WICHTIG: nur auf einer neuen Instanz s.o.) ausführen
 ```shell
-wget -N https://raw.githubusercontent.com/MS-WebDev/nominatim-aws-ec2/master/setup-default-image.sh -P /home/admin
-chmod +x /home/admin/setup-default-image.sh
+cd /home/admin
+wget https://raw.githubusercontent.com/MS-WebDev/nominatim-aws-ec2/master/setup-default-image.sh
+chmod +x ./setup-default-image.sh
 ./setup-default-image.sh
 ```
 
