@@ -2,7 +2,7 @@
 
 ## AWS - EC2 Instanz erstellen
 
-Diese Instanz dient auschließlich zur Einrichtung des Nominatim-Servers als Default-Image, welches später immer wieder im Schnellverfahren aufgesetzt werden kann.
+Diese Instanz dient auschließlich zur Einrichtung des Nominatim-Servers als Default-Image, welches später im Schnellverfahren aufgesetzt werden kann.
 
 1. Neue Amazon EC2 Instanz erstellen
 2. Unter Community AMIs ein Debian Jessie Image auswählen => ami-30e01d5f ([weitere Images](https://wiki.debian.org/Cloud/AmazonEC2Image/Jessie))
@@ -100,5 +100,7 @@ rm /home/admin/Nominatim-2.5.1/settings/state.txt /home/admin/Nominatim-2.5.1/se
 sudo -u postgres psql -c "DROP DATABASE db_name;"
 ```
   
-  
-  
+  * Nominatim-Einstellungen ändern (local.php)
+```shell
+nano /home/admin/Nominatim-2.5.1/settings/local.php
+```
