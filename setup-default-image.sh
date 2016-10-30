@@ -25,6 +25,9 @@ make
 # set PostgreSql password
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD '00000';"
 
+# admin als Psql-Nutzer hinzufügen !!! => nur so kann via admin auf psql zugegriffen werden
+sudo -u postgres createuser -s admin
+
 # Zugriffsrechte HtmlDocPath setzen
 sudo chown -R admin /var/www/html
 
