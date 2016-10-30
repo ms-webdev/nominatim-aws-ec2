@@ -43,6 +43,23 @@ make
 ```shell
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD '00000';"
 ```
+
+  * Nominatim Einstellungen setzen (./settings/local.php)
+```shell
+nano ./settings/local.php
+```
+```php
+<?php
+@define('CONST_Database_DSN', 'pgsql://postgres:00000@localhost:5432/nom_sl');
+@define('CONST_Postgresql_Version', '9.4');
+@define('CONST_Website_BaseURL', 'http://'.php_uname('n').'/nominatim/');
+
+# Update-Einstellungen abgestimmt auf geofabrik.de
+@define('CONST_Replication_Url', 'http://download.geofabrik.de/europe/germany/saarland-updates');
+@define('CONST_Replication_MaxInterval', '40000');
+@define('CONST_Replication_Update_Interval', '86400');
+@define('CONST_Replication_Recheck_Interval', '900');
+```
   
   * Webseite einrichten
 ```shell
@@ -52,6 +69,17 @@ sudo chown admin /var/www/html/nominatim
 # Im Ordner: Nominatim-2.5.1
 ./utils/setup.php --create-website /var/www/html/nominatim
 ```  
+
+  * Testlauf (ohne Update-Funktion)
+```shell
+# Extrakt herunterladen
+wget -N http://download.geofabrik.de/europe/germany/saarland-latest.osm.pbf -P /home/admin/Nominatim-2.5.1/data
+
+# Import starten
+./utils/setup.php --osm-file ./data/saarland-latest.osm.pbf --all
+``` 
+  
+  * 
 
   * In der AWS Konsole diese Instanz auswählen und unter Actions aus dieser ein Image erstellen (Image name: nom-2.5.1-default)
   
