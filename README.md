@@ -107,9 +107,10 @@ rm /home/admin/Nominatim-2.5.1/settings/state.txt /home/admin/Nominatim-2.5.1/se
 ### Default-Image über die AWS Konsole erstellen
 
   * In der AWS Konsole diese Instanz auswählen
-  * unter Actions aus dieser ein Image erstellen
-  * Image name: nom-2.5.1-default
+  * über Actions kann jetzt ein Image erstellt werden
+  * Image name: nom-2.5.1-default (frei wählbar)
   * WICHTIG: In der Spalte "Delete on Termination" muss der Haken entfernt werden, sonst wird beim Löschen der Instanz dieses Image ebenfalls gelöscht
+  * Fertig: dieses Image kann jetzt auf ein beliebigen Instanztyp angewendet werden. Für große Imports bieten sich die [R3-Typen](https://aws.amazon.com/de/ec2/instance-types/#r3) an
   
 ## Hilfreiche Befehle
   * Datenbank entfernen
