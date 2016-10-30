@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# goto /home/admin
+cd /home/admin
+
 # Update/Upgrade apt-get
 sudo apt-get clean && sudo apt-get update && sudo apt-get dist-upgrade
 
