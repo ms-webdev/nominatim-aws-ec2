@@ -79,7 +79,16 @@ wget -N http://download.geofabrik.de/europe/germany/saarland-latest.osm.pbf -P /
 ./utils/setup.php --osm-file ./data/saarland-latest.osm.pbf --all
 ``` 
   
-  * 
+  * Nachdem das Test-Extract ohne Fehler importiert wurde, kann die Suche über http://public-ip/nominatim getestet werden
+  
+  * Nominatim vor der Image-Erstellung säubern
+```shell
+# Test-Datenbank entfernen
+sudo -u postgres psql -c "DROP DATABASE nom_sl;"
+
+# Abhängige Dateien entfernen
+rm /home/admin/Nominatim-2.5.1/settings/state.txt /home/admin/Nominatim-2.5.1/settings/configuration.txt /home/admin/Nominatim-2.5.1/settings/download.lock
+``` 
 
   * In der AWS Konsole diese Instanz auswählen und unter Actions aus dieser ein Image erstellen (Image name: nom-2.5.1-default)
   
