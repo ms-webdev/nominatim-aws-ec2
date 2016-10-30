@@ -46,6 +46,15 @@ make
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD '00000';"
 ```
 
+  * Webseite einrichten
+```shell
+sudo mkdir -m 755 /var/www/html/nominatim
+sudo chown admin /var/www/html/nominatim
+
+# Im Ordner: Nominatim-2.5.1
+./utils/setup.php --create-website /var/www/html/nominatim
+``` 
+
   * Nominatim Einstellungen setzen (./settings/local.php)
 ```shell
 nano ./settings/local.php
@@ -62,15 +71,6 @@ nano ./settings/local.php
 @define('CONST_Replication_Update_Interval', '86400');
 @define('CONST_Replication_Recheck_Interval', '900');
 ```
-  
-  * Webseite einrichten
-```shell
-sudo mkdir -m 755 /var/www/html/nominatim
-sudo chown admin /var/www/html/nominatim
-
-# Im Ordner: Nominatim-2.5.1
-./utils/setup.php --create-website /var/www/html/nominatim
-```  
 
   * Testlauf (ohne Update-Funktion)
 ```shell
