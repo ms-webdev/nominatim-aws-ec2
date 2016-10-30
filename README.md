@@ -55,7 +55,7 @@ sudo chown admin /var/www/html/nominatim
 
   * In der AWS Konsole diese Instanz auswählen und unter Actions aus dieser ein Image erstellen (Image name: nom-2.5.1-default)
   
-  ## Hilfreiche Befehle
+## Hilfreiche Befehle
   * Datenbank entfernen
 ```shell
 sudo -u postgres psql -c "DROP DATABASE db_name;"
