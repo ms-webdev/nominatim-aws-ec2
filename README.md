@@ -52,7 +52,7 @@ nano ./settings/local.php
 <?php
 @define('CONST_Database_DSN', 'pgsql://postgres:00000@localhost:5432/nom_sl');
 @define('CONST_Postgresql_Version', '9.4');
-@define('CONST_Website_BaseURL', 'http://'.php_uname('n').'/nominatim/');
+@define('CONST_Website_BaseURL', 'http://public-ip/nominatim/');
 
 # Update-Einstellungen abgestimmt auf geofabrik.de
 @define('CONST_Replication_Url', 'http://download.geofabrik.de/europe/germany/saarland-updates');
