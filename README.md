@@ -102,7 +102,9 @@ wget -N http://download.geofabrik.de/europe/germany/saarland-latest.osm.pbf -P /
 sudo -u postgres psql -c "DROP DATABASE nom_sl;"
 
 # Abhängige Dateien entfernen
-rm /home/admin/Nominatim-2.5.1/settings/state.txt /home/admin/Nominatim-2.5.1/settings/configuration.txt /home/admin/Nominatim-2.5.1/settings/download.lock
+rm /home/admin/Nominatim-2.5.1/settings/state.txt 
+rm /home/admin/Nominatim-2.5.1/settings/configuration.txt 
+rm /home/admin/Nominatim-2.5.1/settings/download.lock
 ``` 
 ### Default-Image über die AWS Konsole erstellen
 
