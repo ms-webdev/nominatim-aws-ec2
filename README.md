@@ -124,3 +124,15 @@ sudo -u postgres psql -c "DROP DATABASE db_name;"
 ```shell
 nano /home/admin/Nominatim-2.5.1/settings/local.php
 ```
+
+  * PostgreSql Befehle
+```shell
+# Default Postgresql.conf laden (wichtige Variablen oben) 
+sudo wget --output-document=/etc/postgresql/9.4/main/postgresql.conf https://raw.githubusercontent.com/MS-WebDev/nominatim-aws-ec2/master/postgresql.conf
+# PostgreSql Konfiguration bearbeiten
+sudo nano /etc/postgresql/9.4/main/postgresql.conf
+# Restart PSQL-Server
+sudo service postgresql restart
+```
+
+
