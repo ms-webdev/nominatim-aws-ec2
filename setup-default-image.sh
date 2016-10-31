@@ -28,6 +28,13 @@ sudo -u postgres psql -c "ALTER USER postgres PASSWORD '00000';"
 # admin als Psql-Nutzer hinzufügen !!! => nur so kann via admin auf psql zugegriffen werden
 sudo -u postgres createuser -s admin
 
+# user www-data zu Psql hinzufügen
+createuser -SDR www-data
+
+# Zugriffsrechte ändern => module
+chmod +x ~/Nominatim-2.5.1
+chmod +x ~/Nominatim-2.5.1/module
+
 # Zugriffsrechte HtmlDocPath setzen
 sudo chown -R admin /var/www/html
 
