@@ -52,11 +52,18 @@ tar xvf Nominatim-2.5.1.tar.bz2
 cd Nominatim-2.5.1
 ./configure
 make
+
+# Zugriffsrechte ändern => module
+chmod +x ~/Nominatim-2.5.1
+chmod +x ~/Nominatim-2.5.1/module
 ```
 
-  * PostgreSql Passwort setzen
+  * PostgreSql Setup
 ```shell
+# Passwort setzen
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD '00000';"
+# user www-data zu Psql hinzufügen
+createuser -SDR www-data
 ```
 
   * Webseite einrichten
